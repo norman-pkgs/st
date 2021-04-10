@@ -8,7 +8,7 @@
 static char *font = "Liberation Mono for Powerline:pixelsize=16:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-    "JoyPixels:pixelsize=16:antialias=true:autohint=true"
+    "JoyPixels:pixelsize=14:antialias=true:autohint=true"
 };
 
 static int borderpx = 8;
@@ -126,9 +126,10 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"black",
+	"white",  /* 256 */
+	"black",  /* 257 */
+	"#000000",/* 258*/
+	"#FFFFFF",/* 259*/
 };
 
 
@@ -136,9 +137,9 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 258;
-static unsigned int defaultcs = 15;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 256;
 
 /*
@@ -181,6 +182,7 @@ static uint forcemousemod = ShiftMask;
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
+        { "alpha",        FLOAT,   &alpha },
 		{ "font",         STRING,  &font },
 		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
@@ -217,7 +219,7 @@ ResourcePref resources[] = {
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
-const unsigned int mousescrollincrement = 1;
+const unsigned int mousescrollincrement = 8;
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
 	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = mousescrollincrement},      0, /* !alt */ -1 },
