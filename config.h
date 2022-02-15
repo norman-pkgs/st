@@ -5,12 +5,19 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+#ifdef desktop
 static char *font = "LiterationMono Nerd Font:pixelsize=16:antialias=true:autohint=true";
-/* Spare fonts */
 static char *font2[] = {
     "JoyPixels:pixelsize=14:antialias=true:autohint=true",
     "Latin Modern Math:pixelsize=14:antialias=true:autohint=true",
 };
+#elif laptop
+static char *font = "LiterationMono Nerd Font:pixelsize=24:antialias=true:autohint=true";
+static char *font2[] = {
+    "JoyPixels:pixelsize=22:antialias=true:autohint=true",
+    "Latin Modern Math:pixelsize=22:antialias=true:autohint=true",
+};
+#endif
 
 static int borderpx = 3;
 
