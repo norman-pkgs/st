@@ -5,17 +5,17 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-#ifdef desktop
-static char *font = "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-static char *font2[] = {
-    "JoyPixels:pixelsize=16:antialias=true:autohint=true",
-    "Latin Modern Math:pixelsize=16:antialias=true:autohint=true",
-};
-#elif laptop
+#ifdef laptop
 static char *font = "Hack Nerd Font Mono:pixelsize=24:antialias=true:autohint=true";
 static char *font2[] = {
     "JoyPixels:pixelsize=22:antialias=true:autohint=true",
     "Latin Modern Math:pixelsize=22:antialias=true:autohint=true",
+};
+#else
+static char *font = "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font2[] = {
+    "JoyPixels:pixelsize=16:antialias=true:autohint=true",
+    "Latin Modern Math:pixelsize=16:antialias=true:autohint=true",
 };
 #endif
 
