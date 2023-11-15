@@ -5,19 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-#ifdef desktop
-static char *font = "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "JetBrainsMonoNL NF:pixelsize=16:antialias=true:autohint=true";
 static char *font2[] = {
     "JoyPixels:pixelsize=16:antialias=true:autohint=true",
     "Latin Modern Math:pixelsize=16:antialias=true:autohint=true",
 };
-#elif laptop
-static char *font = "Hack Nerd Font Mono:pixelsize=24:antialias=true:autohint=true";
-static char *font2[] = {
-    "JoyPixels:pixelsize=22:antialias=true:autohint=true",
-    "Latin Modern Math:pixelsize=22:antialias=true:autohint=true",
-};
-#endif
 
 static int borderpx = 0;
 
@@ -510,6 +502,7 @@ static Key key[] = {
     { XK_F33,           XK_NO_MOD,      "\033[20;5~",    0,    0},
     { XK_F34,           XK_NO_MOD,      "\033[21;5~",    0,    0},
     { XK_F35,           XK_NO_MOD,      "\033[23;5~",    0,    0},
+    { XK_KP_Space,      ShiftMask,      " ", 0, 0},
 };
 
 /*
